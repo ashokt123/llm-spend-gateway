@@ -1,0 +1,28 @@
+{
+  "_pricing_note": "USD per million tokens, Anthropic first-party list prices (checked 2026-06). Update here when prices change; no code change needed.",
+  "pricing_usd_per_mtok": {
+    "claude-haiku-4-5": {"input": 1.00, "output": 5.00},
+    "claude-sonnet-5":  {"input": 2.00, "output": 10.00},
+    "claude-opus-5":    {"input": 5.00, "output": 25.00}
+  },
+
+  "_roles_note": "Which models each role may call, and requests per minute per key.",
+  "roles": {
+    "pilot":    {"models": ["claude-haiku-4-5"], "rpm": 10},
+    "standard": {"models": ["claude-haiku-4-5", "claude-sonnet-5"], "rpm": 30},
+    "power":    {"models": ["claude-haiku-4-5", "claude-sonnet-5", "claude-opus-5"], "rpm": 60},
+    "service":  {"models": ["claude-haiku-4-5", "claude-sonnet-5"], "rpm": 120},
+    "admin":    {"models": [], "rpm": 60}
+  },
+
+  "_budgets_note": "Daily (UTC) spend cap per team. Tiny on purpose so the demo hits limits in seconds.",
+  "team_budgets_usd_per_day": {
+    "marketing": 0.05,
+    "engineering": 0.20
+  },
+
+  "alert_thresholds": [0.8],
+
+  "_fail_mode_note": "If spend can't be read: 'closed' blocks requests (safe for cost), 'open' allows them unmetered (safe for productivity).",
+  "fail_mode": "closed"
+}
