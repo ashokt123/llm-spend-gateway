@@ -4,6 +4,8 @@ A proxy that sits between an organization's apps and an LLM provider. Apps never
 
 This version runs against a **mock upstream** that returns Claude-shaped responses with realistic `usage` blocks. It is free, offline and deterministic, and needs no API key.
 
+![make demo: normal traffic, a model blocked by role, a runaway job hitting the team budget with webhook alerts, a rate limit, offboarding, and the spend report](docs/demo.gif)
+
 ```
  app / user ──(gw_ key)──▶ ┌──────────────── gateway ────────────────┐ ──▶ upstream (mock Claude API)
                            │ 1 authenticate  key → user, team, role  │
